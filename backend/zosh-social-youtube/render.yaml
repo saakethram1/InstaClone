@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: ChattingSocial
+    env: java # Change to "java" if not using Docker
+    plan: free  # Change if needed (free, starter, standard, pro)
+    region: oregon  # Choose your preferred Render region
+    repo: https://github.com/saakethram1/SocialMedia
+    branch: main
+    buildCommand: "mvn clean package"  # Compile the JAR file
+    startCommand: "java -jar target/*.jar"
+    
+    envVars:
+      - key: JAVA_VERSION
+        value: "17"
+
+      - key: SERVER_PORT
+        value: "5454"
+
+      - key: SPRING_DATASOURCE_URL
+        value: "jdbc:mysql://your-mysql-host:3306/zosh_social"
+      
+      - key: SPRING_DATASOURCE_USERNAME  
+        value: "root"
+      
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false  # Keeps it secure in Render's environment settings
+      
+      - key: SPRING_MAIL_HOST
+        value: "smtp.gmail.com"
+      
+      - key: SPRING_MAIL_PORT
+        value: "587"
+      
+      - key: SPRING_MAIL_USERNAME
+        value: "mamidalasaaketh@gmail.com"
+      
+      - key: SPRING_MAIL_PASSWORD
+        sync: false  # Do not hardcode this, set it in Render Dashboard
+      
+      - key: SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH
+        value: "true"
+      
+      - key: SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE
+        value: "true"
