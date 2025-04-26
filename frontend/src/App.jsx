@@ -11,7 +11,7 @@ import Demo from './pages/Message/Demo';
 import VideoCalling from './components/Message/VideoCalling';
 
 import darkTheme from './theam/DarkTheam';
-import { ThemeProvider } from '@mui/material';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import HomePage from './pages/Homepage/HomePage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -29,6 +29,8 @@ function App() {
   }, [dispatch,jwt, user]);
   return (
     <ThemeProvider theme={darkTheme}>
+          <CssBaseline /> {/* ✅ This applies global theme-based styles */}
+
     <BrowserRouter>
       <Routes>
         <Route path='/*' element={user? <HomePage/>:<Authentication/>}/>

@@ -90,6 +90,9 @@ function LoginForm() {
           </Button>
         </Form>
       </Formik>
+      <div className="mt-2">
+      <Button sx={{ padding: ".8rem 0rem" }} fullWidth type="submit" variant="contained" color="primary">Login With Google 🌏 </Button>
+      </div>
       <div className="flex items-center space-x-1 mt-5 justify-center">
         <p>if you don't have account ?</p>
         <Button onClick={() => navigate("/register")} size="small">

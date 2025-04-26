@@ -9,6 +9,9 @@ import Profile from "../Profile/Profile";
 import HomeRight from "../../components/HomeRight";
 import Reels from "../Reels/Reels";
 import CreateReelsForm from "../Reels/CreateReelsForm";
+import { Button } from '@mui/material';
+
+
 
 const HomePage = () => {
   const location = useLocation();
@@ -16,6 +19,8 @@ const HomePage = () => {
 
   return (
     <div className="flex  h-screen overflow-visible ">
+    {/* <Button variant="contained" color="primary">Themed Button</Button> */}
+
       {/* Sidebar (Hidden on small screens) */}
       <div className="w-1/5">
       <div className="hidden lg:flex  xl:w-1/5 h-full fixed  left-0 top-0">
